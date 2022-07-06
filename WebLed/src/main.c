@@ -8,6 +8,38 @@
 */
 
 #include "wifi.h"
+#include <stdio.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+#include "esp_system.h"
+#include "freertos/event_groups.h"
+#include "driver/gpio.h"
+#include "esp_event.h"
+#include "nvs_flash.h"
+#include "esp_log.h"
+#include "DHT.h"
+
+static const char *TAG = "DHT";
+
+void DHT_task(void *pvParameter)
+{
+    setDHTgpio(GPIO_NUM_34);
+    ESP_LOGI(TAG, "Starting DHT Task\n\n");
+
+    while (1)
+    {
+        ESP_LOGI(TAG, "=== Reading DHT ===\n");
+        int ret = readDHT();
+
+        errorHandler(ret);
+
+        ESP_LOGI(TAG, "Hum: %.1f Tmp: %.1f\n", getHumidity(), getTemperature());
+
+        // -- wait at least 2 sec before reading again ------------
+        // The interval of whole process must be beyond 2 seconds !!
+        vTaskDelay(2000 / portTICK_RATE_MS);
+    }
+}
 
 void app_main(void)
 {
@@ -21,4 +53,6 @@ void app_main(void)
 
     ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
     wifi_init_sta();
+
+    xTaskCreate(&DHT_task, "DHT_task", 2048, NULL, 5, NULL);
 }
