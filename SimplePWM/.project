@@ -3369,6 +3369,11 @@
 			<location>/home/thomas/esp-idf-v4.4.1/components/mbedtls/mbedtls/library/rsa.c</location>
 		</link>
 		<link>
+			<name>esp_idf_components/mbedtls/mbedtls/library/rsa_alt_helpers.c</name>
+			<type>1</type>
+			<location>/home/thomas/esp32/esp-idf/components/mbedtls/mbedtls/library/rsa_alt_helpers.c</location>
+		</link>
+		<link>
 			<name>esp_idf_components/mbedtls/mbedtls/library/rsa_internal.c</name>
 			<type>1</type>
 			<location>/home/thomas/esp-idf-v4.4.1/components/mbedtls/mbedtls/library/rsa_internal.c</location>
@@ -3429,9 +3434,24 @@
 			<location>/home/thomas/esp-idf-v4.4.1/components/mbedtls/mbedtls/library/ssl_tls.c</location>
 		</link>
 		<link>
+			<name>esp_idf_components/mbedtls/mbedtls/library/ssl_tls13_client.c</name>
+			<type>1</type>
+			<location>/home/thomas/esp32/esp-idf/components/mbedtls/mbedtls/library/ssl_tls13_client.c</location>
+		</link>
+		<link>
+			<name>esp_idf_components/mbedtls/mbedtls/library/ssl_tls13_generic.c</name>
+			<type>1</type>
+			<location>/home/thomas/esp32/esp-idf/components/mbedtls/mbedtls/library/ssl_tls13_generic.c</location>
+		</link>
+		<link>
 			<name>esp_idf_components/mbedtls/mbedtls/library/ssl_tls13_keys.c</name>
 			<type>1</type>
 			<location>/home/thomas/esp-idf-v4.4.1/components/mbedtls/mbedtls/library/ssl_tls13_keys.c</location>
+		</link>
+		<link>
+			<name>esp_idf_components/mbedtls/mbedtls/library/ssl_tls13_server.c</name>
+			<type>1</type>
+			<location>/home/thomas/esp32/esp-idf/components/mbedtls/mbedtls/library/ssl_tls13_server.c</location>
 		</link>
 		<link>
 			<name>esp_idf_components/mbedtls/mbedtls/library/threading.c</name>
