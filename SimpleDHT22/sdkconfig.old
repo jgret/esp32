@@ -135,8 +135,8 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # Example Configuration
 #
-CONFIG_ESP_WIFI_SSID="cablelink_0675016"
-CONFIG_ESP_WIFI_PASSWORD="83Cmb4DPv3TY=s3c"
+CONFIG_ESP_WIFI_SSID="myssid"
+CONFIG_ESP_WIFI_PASSWORD="mypassword"
 # end of Example Configuration
 
 #
